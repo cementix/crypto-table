@@ -1,0 +1,1 @@
+To run this website you need install all the files and npm modules and then run index.js with node.

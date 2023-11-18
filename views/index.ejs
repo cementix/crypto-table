@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" href="images/favicon.png">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>Crypto table</title>
+</head>
+<body>
+    <div class="logo">
+        <h1>Real-time crypto table!</h1>
+        <h5>by cement</h5>
+    </div>
+
+    <div class="cryptoTable">
+        <div class="currency">
+            <div class="currencySymbol">
+                <h2>Symbol:</h2>
+            </div>
+            <div class="currencyPrice">
+                <h2>24h price</h2>
+            </div>
+            <div class="currencyVolume">
+                <h2>24h volume</h2>
+            </div>
+        </div>
+        <% if (locals.content && locals.content.length > 0) { %>
+            <% locals.content.forEach(currencyData => { %>
+                <div class="currency">
+                    <div class="currencySymbol">
+                        <h2><%= currencyData[0].symbol %></h2>
+                    </div>
+                    <div class="currencyPrice">
+                        <h2><%= currencyData[0].price_24h %></h2>
+                    </div>
+                    <div class="currencyVolume">
+                        <h2><%= currencyData[0].volume_24h %></h2>
+                    </div>
+                </div>
+            <% }); %>
+            <% } %>
+    </div>
+</body>
+</html>
