@@ -34,7 +34,7 @@
             <% locals.content.forEach(currencyData => { %>
                 <div class="currency">
                     <div class="currencySymbol currencyInfo">
-                        <img src="images/<%= currencyData.symbol %>.png" class="currencyImage" />
+                        <img src="https://coinicons-api.vercel.app/api/icon/<%= currencyData.symbol.toLowerCase().replace('usdt', '') %>" class="currencyImage" />
                         <h2><%= currencyData.symbol %></h2>
                     </div>
                     <div class="currencyPrice currencyInfo">
@@ -46,9 +46,14 @@
                 </div>
             <% }); %>
             <% } %>
+
+        <form action="/getCrypto" method="POST" class="cryptoForm">
+            <input type="text" name="tokenName" placeholder="Enter crypto token" class="tokenInput">
+            <input type="submit" value="OK" class="tokenSubmit">
+        </form>
     </div>
 
-
+    <!-- <img src="https://coinicons-api.vercel.app/api/icon/xrp" /> -->
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>

@@ -67,3 +67,34 @@ body {
     height: 40px;
     width: 40px;
 }
+
+.cryptoForm {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0 50px 0;
+    gap: 20px;
+}
+
+.tokenInput {
+    height: 40px;
+    font-size: 2rem;
+    border: 0;
+    font-family: 'Raleway', sans-serif;
+    text-align: center;
+}
+
+.tokenSubmit {
+    height: 40px;
+    width: 120px;
+    border-radius: 30px;
+    border: 0;
+    background-color: #84DCCF;
+    cursor: pointer;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.8rem;
+}
+
+.tokenSubmit:hover {
+    background-color: cyan;
+    border: solid 1px black;
+}
