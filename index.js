@@ -3,21 +3,22 @@ import axios from 'axios';
 
 const app = express();
 const port = 3000;
-const API_URL = 'https://api.blockchain.com/v3/exchange/';
 
-app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.get('/', async (req, res) => {
     try {
-        const result = await axios.get(`${API_URL}tickers`);
+        let cryptoArray = ['BTCUSDT', 'ETHUSDT', 'BNBUSDT', 'XRPUSDT',
+        'SOLUSDT', 'DOTUSDT', 'LUNAUSDT']
+        // ADD YOUR CRYPTO PAIR HERE
         let cryptoData = [];
-        const btcData = result.data.filter(item => item.symbol ===('BTC-USD'));
-        const ethData = result.data.filter(item => item.symbol ===('ETH-USD'));
-        cryptoData.push(btcData, ethData)
+        for (let i = 0; i<cryptoArray.length; i++) {
+            const response = await axios.get(`https://api.binance.com/api/v3/ticker/24hr?symbol=${cryptoArray[i]}`);
+            cryptoData.push(response.data)
+        }
         res.render('index.ejs', { content: cryptoData });
         console.log(cryptoData)
-    } catch (errogr) {
+    } catch (error) {
         console.error('Failed to make request', error.message);
         res.render('index.ejs');
     };

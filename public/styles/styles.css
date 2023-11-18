@@ -4,20 +4,66 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #312F2F;
+}
+
+#particles {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
 .logo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2rem;
+    margin-top: 30px;
 }
 
 .cryptoTable {
     display: flex;
+    flex-direction: column;
     gap: 30px;
 }
 
 .currency {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    gap: 30px
+}
 
+.currencyInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:  #484646;
+    border: solid 4px #84DCCF;
+    border-radius: 30px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    width: 300px;
+    height: 70px;
+}
+
+.currencyInfoLogo {
+    font-family: 'Raleway', sans-serif;
+    color: #f0e6f2;
+    font-size: larger;
+}
+
+.currencySymbol {
+    display: flex;
+    gap: 10px;
+}
+.currencyImage {
+    height: 40px;
+    width: 40px;
 }
