@@ -68,10 +68,21 @@ body {
     width: 40px;
 }
 
+.addMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2.5rem;
+    margin-top: 30px;
+}
+
 .cryptoForm {
     display: flex;
     justify-content: center;
-    margin: 50px 0 50px 0;
+    margin: 10px 0 50px 0;
     gap: 20px;
 }
 
